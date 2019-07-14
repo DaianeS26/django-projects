@@ -14,5 +14,5 @@ urlpatterns = [
 
 urlpatterns += [
     # re_path(r'^restaurant/(?P<slug>\w+)/$', RestaurantListView.as_view()),
-    re_path(r'^restaurant/(?P<rest_id>\w+)/$', RestaurantDetailtView.as_view(), name='restaurant-detail'),
+    re_path(r'restaurant/(?P<slug>[\w-]+)/$', RestaurantDetailtView.as_view(), name='restaurant-detail'),
 ]

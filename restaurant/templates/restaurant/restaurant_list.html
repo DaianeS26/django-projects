@@ -1,20 +1,21 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<nav>
+<!-- <nav>
  {% for obj in object_list %}
    
         <a href="{{ obj.url }}">{{ obj.category }}</a>
 
 {% endfor %}
-</nav>
+</nav> -->
 
 
 
 <h1>Restaurant List</h1>
 <ul class="list">
 {% for obj in object_list %}
-<li>{{ obj.name }}  |  {{obj.location }} | {{ obj.category }}</li>
+<li><a href="restaurant/restaurant/{{obj.slug}}/">{{ obj }}</a></li>
+<li>{{obj.location }} | {{ obj.category }}</li>
 
 {% endfor %}
 
