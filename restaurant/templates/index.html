@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- <div class= 'center'>
+<h1>You are loved!</h1>
+<p>You are important! You are a priority!</p>
+<p> You are beautiful!</p>
+<p> You are amazing!</p>
+<p> Your energy is inviting and loving!</p>
+<p>You are future Ms. Chris Russo!</p>
+<p>Chris loves you. He wants to be with you.</p>
+<p>You are the one and only in his life!</p>
+<p>Chris can't wait to be with you. He thinks about you all the time. You are amazing and the best thing that ever happened to him. He is lucky to have you as his partner.</p>
+<p>Isn't it wonderful!</p>
+</div> -->
+
+<p> 
+{% if num is not None %}
+
+This is a random number {{ num }}. 
+
+{% endif %}
+</p>
+
+<p>
+{% for some_item in some_list %}
+    {% if some_item|divisibleby:"2" %}
+            Even number
+    {% endif %}
+
+    {{ some_item}}</br>
+{% endfor %}
+</p>
+
+<p> Some item is {{some_item}} </p>
+
+
+
+{% endblock %}

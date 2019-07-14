@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<nav>
+ {% for obj in object_list %}
+   
+        <a href="{{ obj.url }}">{{ obj.category }}</a>
+
+{% endfor %}
+</nav>
+
+
+
+<h1>Restaurant List</h1>
+<ul class="list">
+{% for obj in object_list %}
+<li>{{ obj.name }}  |  {{obj.location }} | {{ obj.category }}</li>
+
+{% endfor %}
+
+
+</ul>
+
+
+{% endblock %}
