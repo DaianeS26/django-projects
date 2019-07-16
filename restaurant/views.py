@@ -4,9 +4,30 @@ from django.views.generic import TemplateView, ListView, DetailView
 import random
 from .models import Restaurant
 from django.db.models import Q
+from .forms import RestaurantCreateForm
+from django.http import HttpResponseRedirect
 
 
 # Create your views here.
+def restaurant_createview(request):
+    form = RestaurantCreateForm(request.POST or None)
+    errors = None
+    if form.is_valid():
+        obj = Restaurant.objects.create(
+                name = form.cleaned_data.get('name'),
+                location = form.cleaned_data.get('location'),
+                category = form.cleaned_data.get('category'),
+            )
+        return HttpResponseRedirect('/restaurant/')
+    if form.errors:
+        errors = form.errors
+
+    template_name = 'restaurant/forms.html'
+    context = {'form': form, 'errors': errors}
+    return render (request, template_name, context)
+
+
+
 
 def index(request):
     num = None

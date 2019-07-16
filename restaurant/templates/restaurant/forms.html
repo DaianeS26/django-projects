@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+<h1>Add Restaurant</h1>
+
+    {% if errors %}
+        {{ errors }}
+    {% endif %}
+    <form method= "POST">
+        {% csrf_token %}
+        <!-- <p><input type="text" name='name' placeholder="Restaurant name"></p>
+        <p><input type="text" name='location' placeholder="Restaurant location"></p>
+        <p><input type="text" name='category' placeholder="Restaurant category"></p> -->
+        {{ form.as_p }}
+        <button type="submit"> Save</button>
+    </form>
+
+
+
+{% endblock %}
